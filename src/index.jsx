@@ -10,17 +10,17 @@ import VConsole from 'vconsole';
 
 const vConsole = new VConsole();
 
-console.log('location', window.location.origin)
+console.log('location', window.location.href)
 let basename = ''
-if (window.location.origin.indexOf('localhost') === -1) {
+if (window.location.href.indexOf('localhost') === -1) {
   basename = '/module/visitorh5'
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    <MemoryRouter basename={basename}>
+    <BrowserRouter basename={basename}>
       <App />
-    </MemoryRouter>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

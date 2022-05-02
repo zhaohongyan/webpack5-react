@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, MemoryRouter } from './react-router-dom.index.js'
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import VConsole from 'vconsole';
+
+const vConsole = new VConsole();
+
+console.log('location', window.location.origin)
+let basename = ''
+if (window.location.origin.indexOf('localhost') === -1) {
+  basename = '/module/visitorh5'
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MemoryRouter basename={basename}>
+      <App />
+    </MemoryRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

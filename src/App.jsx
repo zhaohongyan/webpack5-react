@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Link } from './react-router-dom.index.js'
+import { Routes, Route, Link } from './react-router-dom.index.js'
 import './App.css';
 
 import Home from './Home'
@@ -8,7 +8,7 @@ import Page from './Page'
 
 function App() {
   useEffect(() => {
-    console.log('app')
+    console.log('app', navigator.userAgent)
   })
 
   return (

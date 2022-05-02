@@ -213,9 +213,13 @@ function createBrowserHistory(options) {
 
 
       try {
-        console.log('historyState===', historyState, url)
+        console.log('history state===', historyState, url)
+        if (navigator.userAgent.includes('baiduboxapp')) {
+          globalHistory.replaceState(historyState, '', url);
+        }
         globalHistory.pushState(historyState, '', url);
       } catch (error) {
+        console.log('pushState error', error)
         // They are going to lose state here, but there is no real
         // way to warn them about it since the page will refresh...
         window.location.assign(url);

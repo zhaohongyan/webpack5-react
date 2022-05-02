@@ -566,7 +566,7 @@ function useNavigate() {
     if (basename !== "/") {
       path.pathname = joinPaths([basename, path.pathname]);
     }
-    console.log('path===', path.pathname, options);
+    console.log('useNavigate path===', path.pathname, options);
     // navigator.push(path, options.state);
     (!!options.replace ? navigator.replace : navigator.push)(path, options.state);
 

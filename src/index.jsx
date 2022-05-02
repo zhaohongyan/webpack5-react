@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, MemoryRouter } from './react-router-dom.index.js'
+import { BrowserRouter } from './react-router-dom.index.js'
 
 import './index.css';
 import App from './App';
@@ -11,9 +11,9 @@ import VConsole from 'vconsole';
 const vConsole = new VConsole();
 
 console.log('location', window.location.href)
-let basename = ''
-if (window.location.href.indexOf('localhost') === -1) {
-  basename = '/module/visitorh5'
+let basename = '/module/visitorh5'
+if (window.location.href.includes('localhost') || window.location.href.includes('192.168')) {
+  basename = ''
 }
 
 ReactDOM.render(

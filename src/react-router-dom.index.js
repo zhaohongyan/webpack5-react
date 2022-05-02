@@ -77,7 +77,7 @@ function BrowserRouter(_ref) {
     window
   } = _ref;
   let historyRef = useRef();
-
+  console.log('reat-router-dom===', historyRef.current)
   if (historyRef.current == null) {
     historyRef.current = createBrowserHistory({
       window
@@ -85,12 +85,12 @@ function BrowserRouter(_ref) {
   }
 
   let history = historyRef.current;
-  console.log('history===', history.location);
+  console.log('BrowserRouter history===', history.location);
   let [state, setState] = useState({
     action: history.action,
     location: history.location
   });
-  useEffect(() => history.listen(setState), [history]);
+  useLayoutEffect(() => history.listen(setState), [history]);
   return /*#__PURE__*/createElement(Router, {
     basename: basename,
     children: children,
